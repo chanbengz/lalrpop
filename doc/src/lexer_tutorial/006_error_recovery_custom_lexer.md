@@ -13,9 +13,10 @@ use lalrpop_util::ErrorRecovery;
 + grammar<'err>(errors: &'err mut Vec<ErrorRecovery<usize, Token, LexicalError>>);
 ```
 
-Now, everything should work as you wish. But still, there's a little problem here that you
-may encounter. If you try tweaking the toy script in previous chapter, with an illegal token
-to trigger `LexicalError::InvalidToken`, the parser will panic at the lexical error
+Now, everything should work as you wish. But still, there's a little problem here
+that you may encounter. If you try tweaking the toy script in previous chapter,
+with an illegal token to trigger `LexicalError::InvalidToken`, the parser will
+panic at the lexical error
 
 ```plaintext
 print (a - $);
