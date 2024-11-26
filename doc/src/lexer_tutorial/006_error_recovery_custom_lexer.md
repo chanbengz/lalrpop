@@ -24,9 +24,10 @@ print (a - $);
 // Err(User { error: InvalidToken })
 ```
 
-It's caused by the inconsistency in the lexer stream, as lalrpop parser always expects a
-normal token stream. To fix this, you need to add a workaround in the lexer part to process
-the "error recovery" inside the lexer, for example
+It's caused by the inconsistency in the lexer stream, as lalrpop parser
+always expects a normal token stream. To fix this, you need to add a
+workaround in the lexer part to process the "error recovery" inside
+the lexer, for example
 
 ```diff
 impl<'input> Iterator for Lexer<'input> {
